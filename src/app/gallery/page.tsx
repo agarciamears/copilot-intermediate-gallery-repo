@@ -12,6 +12,7 @@ export default function GalleryPage() {
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
   const [isFilterOpen, setIsFilterOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
+  const [orientationFilter, setOrientationFilter] = useState<'all' | 'landscape' | 'portrait'>('all');
   const filterRef = useRef<HTMLDivElement>(null);
 
   // Close filter dropdown when clicking outside
@@ -58,6 +59,11 @@ export default function GalleryPage() {
     setSearchQuery(query);
     setCurrentPage(1);
   };
+
+  const handleOrientationChange = (value: 'all' | 'landscape' | 'portrait') => {
+    setOrientationFilter(value);
+    setCurrentPage(1);
+  };
   return (
     <div className="page-gradient">
       <Hero 
@@ -86,6 +92,23 @@ export default function GalleryPage() {
 
             {/* Filter Controls */}
             <div className="flex items-center gap-4">
+              {/* Orientation filter */}
+              <div className="flex rounded-lg overflow-hidden border border-slate-300 dark:border-slate-600" role="group" aria-label="Filtrar fotos por orientación de imagen">
+                {(['all', 'landscape', 'portrait'] as const).map((opt) => (
+                  <button
+                    key={opt}
+                    onClick={() => handleOrientationChange(opt)}
+                    aria-pressed={orientationFilter === opt}
+                    className={`px-3 py-2 text-sm font-medium transition-colors ${
+                      orientationFilter === opt
+                        ? 'bg-blue-500 text-white'
+                        : 'bg-white dark:bg-slate-700 text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-600'
+                    }`}
+                  >
+                    {opt === 'all' ? 'Todas' : opt === 'landscape' ? 'Horizontal' : 'Vertical'}
+                  </button>
+                ))}
+              </div>
               <div className="relative" ref={filterRef}>
                 <button 
                   onClick={() => setIsFilterOpen(!isFilterOpen)}
@@ -190,6 +213,7 @@ export default function GalleryPage() {
           isLoading={isLoading}
           selectedTags={selectedTags}
           searchQuery={searchQuery}
+          orientationFilter={orientationFilter}
         />
       </SectionContainer>
     </div>

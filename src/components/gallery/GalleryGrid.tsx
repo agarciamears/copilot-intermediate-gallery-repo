@@ -13,6 +13,7 @@ interface GalleryGridProps {
   selectedTags?: string[];
   searchQuery?: string;
   currentPage?: number;
+  orientationFilter?: 'all' | 'landscape' | 'portrait';
 }
 
 export function GalleryGrid({ 
@@ -22,12 +23,13 @@ export function GalleryGrid({
   isLoading = false,
   selectedTags = [],
   searchQuery = "",
-  currentPage = 1
+  currentPage = 1,
+  orientationFilter = 'all'
 }: GalleryGridProps) {
   const [selectedPhoto, setSelectedPhoto] = useState<Photo | null>(null);
   const [likedPhotos, setLikedPhotos] = useState<Set<string>>(new Set());
 
-  // Filter photos based on selected tags and search query
+  // Filter photos based on selected tags, search query and orientation
   const filteredPhotos = mockPhotos.filter(photo => {
     // Filter by tags
     const matchesTags = selectedTags.length === 0 || 
@@ -38,8 +40,11 @@ export function GalleryGrid({
       photo.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
       photo.tags.some(tag => tag.toLowerCase().includes(searchQuery.toLowerCase())) ||
       (photo.photographer && photo.photographer.toLowerCase().includes(searchQuery.toLowerCase()));
+
+    // Filter by orientation
+    const matchesOrientation = orientationFilter === 'all' || photo.orientation === orientationFilter;
     
-    return matchesTags && matchesSearch;
+    return matchesTags && matchesSearch && matchesOrientation;
   });
 
   // Calculate pagination
@@ -65,6 +70,11 @@ export function GalleryGrid({
 
   return (
     <div className={`w-full ${className}`}>
+      {/* Results counter */}
+      <div className="mb-4 text-sm text-slate-500 dark:text-slate-400">
+        {totalPhotos} {totalPhotos === 1 ? 'foto' : 'fotos'}
+      </div>
+
       {/* Gallery Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {displayedPhotos.map((photo, index) => (

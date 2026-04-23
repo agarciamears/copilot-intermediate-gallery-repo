@@ -8,6 +8,7 @@ export interface Photo {
   views: number;
   photographer?: string;
   dateTaken?: string;
+  orientation: 'landscape' | 'portrait';
 }
 
 export const mockPhotos: Photo[] = [
@@ -20,7 +21,8 @@ export const mockPhotos: Photo[] = [
     downloads: 45,
     views: 1205,
     photographer: 'John Doe',
-    dateTaken: '2024-01-15'
+    dateTaken: '2024-01-15',
+    orientation: 'landscape'
   },
   {
     id: '2',
@@ -31,7 +33,8 @@ export const mockPhotos: Photo[] = [
     downloads: 23,
     views: 892,
     photographer: 'Jane Smith',
-    dateTaken: '2024-01-10'
+    dateTaken: '2024-01-10',
+    orientation: 'portrait'
   },
   {
     id: '3',
@@ -42,7 +45,8 @@ export const mockPhotos: Photo[] = [
     downloads: 67,
     views: 1543,
     photographer: 'Mike Johnson',
-    dateTaken: '2024-01-08'
+    dateTaken: '2024-01-08',
+    orientation: 'landscape'
   },
   {
     id: '4',
@@ -53,7 +57,8 @@ export const mockPhotos: Photo[] = [
     downloads: 89,
     views: 2134,
     photographer: 'Sarah Wilson',
-    dateTaken: '2024-01-05'
+    dateTaken: '2024-01-05',
+    orientation: 'portrait'
   },
   {
     id: '5',
@@ -64,7 +69,8 @@ export const mockPhotos: Photo[] = [
     downloads: 34,
     views: 765,
     photographer: 'Alex Brown',
-    dateTaken: '2024-01-03'
+    dateTaken: '2024-01-03',
+    orientation: 'landscape'
   },
   {
     id: '6',
@@ -75,7 +81,8 @@ export const mockPhotos: Photo[] = [
     downloads: 112,
     views: 3421,
     photographer: 'Emma Davis',
-    dateTaken: '2024-01-01'
+    dateTaken: '2024-01-01',
+    orientation: 'portrait'
   },
   {
     id: '7',
@@ -86,7 +93,8 @@ export const mockPhotos: Photo[] = [
     downloads: 78,
     views: 1876,
     photographer: 'David Chen',
-    dateTaken: '2023-12-28'
+    dateTaken: '2023-12-28',
+    orientation: 'landscape'
   },
   {
     id: '8',
@@ -97,7 +105,8 @@ export const mockPhotos: Photo[] = [
     downloads: 95,
     views: 2543,
     photographer: 'Lisa Martinez',
-    dateTaken: '2023-12-25'
+    dateTaken: '2023-12-25',
+    orientation: 'landscape'
   },
   {
     id: '9',
@@ -108,6 +117,7 @@ export const mockPhotos: Photo[] = [
     downloads: 143,
     views: 4321,
     photographer: 'Tom Anderson',
-    dateTaken: '2023-12-20'
+    dateTaken: '2023-12-20',
+    orientation: 'portrait'
   }
 ];
