@@ -82,6 +82,28 @@ Aprende a usar el servidor GitHub MCP desde VS Code para que Copilot cree trabaj
 
 ---
 
+### 8. Demo: Crear un Agente Personalizado para Bicep IaC ([custom-agent-bicep-demo.md](custom-agent-bicep-demo.md))
+**Descripción:**  
+Crea desde cero un modo de agente personalizado especializado en Infrastructure as Code con Azure Bicep. Sin código, solo Markdown. La demo muestra cómo codificar los estándares del equipo directamente en el comportamiento de Copilot y ver el resultado en tiempo real.  
+**Habilidades Clave:**  
+- Entender la estructura de un archivo `.agent.md`
+- Crear un agente especializado con instrucciones de seguridad y AVM
+- Activar y comparar el agente frente a Copilot por defecto
+- Identificar qué agentes serían útiles para el propio equipo
+
+---
+
+### 9. Demo: Testing con GitHub Copilot — de Cero a Suite Funcional ([testing-with-copilot-demo.md](testing-with-copilot-demo.md))
+**Descripción:**  
+Parte de un proyecto sin ningún test runner y llega a una suite funcional en verde usando Copilot para cada paso: configuración de Jest, tests de lógica de filtrado, tests de interacción con drag & drop, y una revisión crítica de cobertura hecha por el propio Copilot.  
+**Habilidades Clave:**  
+- Configurar Jest + React Testing Library en Next.js 15 con un prompt
+- Generar tests unitarios para lógica de filtrado y estado
+- Generar tests de interacción con mocks de APIs del browser
+- Usar Copilot como reviewer de cobertura para identificar casos edge
+
+---
+
 ## Cómo Usar Estos Demos
 
 1. Comienza con el primer demo y trabaja a través de cada guía en orden.
