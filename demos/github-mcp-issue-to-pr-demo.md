@@ -88,27 +88,19 @@ En esta demo no vamos a usar MCP como una pieza de configuración, sino como una
 
 ## ✍️ Paso 3: Crea un Issue Desde el Chat
 
-Con Copilot Chat en modo agente, utiliza un prompt que sea visual, concreto y pequeño para demo.
 
-### Prompt recomendado
+Con Copilot Chat en modo agente, utiliza este prompt breve para la demo:
+
+### Prompt recomendado para la demo
 
 ```markdown
-Usando las herramientas disponibles, crea un issue en GitHub para este repositorio proponiendo una nueva funcionalidad: filtros avanzados en la galería por tag y orientación de imagen.
-
-Quiero:
-- un título claro
-- contexto del problema
-- propuesta funcional
-- criterios de aceptación
-- checklist técnica inicial
-- una nota corta explicando qué archivos del repo probablemente se verán afectados
+Crea un issue en GitHub para agregar un botón de "Scroll to Top" flotante en la página de galería, que aparezca cuando el usuario hace scroll hacia abajo.
 ```
 
 ### Qué remarcar mientras responde Copilot
 
-- Está usando contexto local del repositorio
-- Está actuando sobre GitHub, no solo redactando texto
-- Puede proponer impacto técnico con base en la estructura del proyecto
+- El prompt es breve y deja espacio a la interpretación de Copilot
+- Permite mostrar el ciclo completo: issue → PR → revisión
 
 **Resultado esperado:** Se crea un issue real en GitHub, bien redactado y accionable.
 

@@ -1,43 +1,35 @@
----
-mode: 'agent'
-description: 'Generate a new UI component following project patterns'
-tools: ['codebase', 'editFiles']
----
+# Crear Nuevo Componente UI
 
-# Create New UI Component
+Genera un nuevo componente UI para la aplicación de Galería de Fotos & Portafolio siguiendo los patrones establecidos.
 
-## Context
-Generate a new UI component for the Photo Gallery & Portfolio application following established patterns and conventions.
+## Patrones del Proyecto
+- TypeScript con interfaces estrictas
+- Patrón de layout: SectionContainer + SectionTitle
+- Diseño responsivo con Tailwind CSS
+- Soporte para dark mode (clases `dark:`)
+- Animaciones con Framer Motion donde sea apropiado
+- Iconos de Lucide React
+- Accesibilidad (ARIA labels, semántica)
 
-## Project Patterns to Follow
-- Use TypeScript with strict interfaces
-- Follow the SectionContainer/SectionTitle layout pattern
-- Implement responsive design with Tailwind CSS
-- Include dark mode support
-- Add Framer Motion animations where appropriate
-- Use Lucide React icons
-- Follow accessibility best practices
+## Requisitos
+1. Crear interface TypeScript para props
+2. Usar Tailwind classes con variantes dark mode
+3. Exportar componente y tipos
+4. Convención: PascalCase para componentes
+5. Responsive design (mobile-first)
 
-## Component Requirements
-1. Create TypeScript interface for props
-2. Use proper Tailwind classes with dark mode variants
-3. Include JSDoc comments
-4. Export component and types
-5. Follow naming conventions (PascalCase for components)
-6. Implement responsive design patterns
+## Ubicación de Archivos
+- Componentes de layout: `src/components/ui/layout/`
+- Componentes de galería: `src/components/gallery/`
+- Componentes de upload: `src/components/upload/`
+- Componentes genéricos: `src/components/ui/`
 
-## File Structure
-Place components in appropriate directories:
-- Layout components: `src/components/ui/layout/`
-- Feature components: `src/components/gallery/` or `src/components/upload/`
-- Generic UI: `src/components/ui/`
-
-## Example Usage Pattern
+## Patrón de Uso
 ```tsx
 <SectionContainer>
-  <SectionTitle title="Component Name" />
-  {/* Component content */}
+  <SectionTitle title="Nombre del Componente" />
+  {/* Contenido */}
 </SectionContainer>
 ```
 
-Create the component following these patterns and include usage examples.
+Sigue estos patrones e incluye ejemplos de uso.
