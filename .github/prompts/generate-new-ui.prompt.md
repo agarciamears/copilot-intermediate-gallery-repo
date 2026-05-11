@@ -14,10 +14,9 @@ Genera un nuevo componente UI para la aplicación de Galería de Fotos & Portafo
 ## Requisitos
 1. Crear interface TypeScript para props
 2. Usar Tailwind classes con variantes dark mode
-3. Comentarios JSDoc
-4. Exportar componente y tipos
-5. Convención: PascalCase para componentes
-6. Responsive design (mobile-first)
+3. Exportar componente y tipos
+4. Convención: PascalCase para componentes
+5. Responsive design (mobile-first)
 
 ## Ubicación de Archivos
 - Componentes de layout: `src/components/ui/layout/`
