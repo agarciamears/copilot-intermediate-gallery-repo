@@ -1,16 +1,17 @@
 # Instrucciones para Copilot - Galería de Fotos y Portafolio
 
 ## 📋 ¿Qué son estas instrucciones?
-# Las instrucciones de Copilot son directivas que definen el contexto, patrones y mejores prácticas
-# para un proyecto específico. Copilot las usa para:
-# - Generar código coherente con la arquitectura existente
-# - Mantener convenciones consistentes
-# - Evitar anti-patterns en el proyecto
-# - Acelerar desarrollo al "recordar" decisiones de diseño
+Las instrucciones de Copilot son directivas que definen el contexto, patrones y mejores prácticas para un proyecto específico. Copilot las usa para:
+
+- Generar código coherente con la arquitectura existente
+- Mantener convenciones consistentes
+- Evitar anti-patterns en el proyecto
+- Acelerar desarrollo al "recordar" decisiones de diseño
 
 ## 🎯 Descripción del Proyecto
-# Este es un proyecto real: una Galería de Fotos y Portafolio profesional
-# Propósito: demostrar características de GitHub Copilot en una aplicación Next.js moderna
+Este es un proyecto real: una Galería de Fotos y Portafolio profesional.
+
+Propósito: demostrar características de GitHub Copilot en una aplicación Next.js moderna.
 
 Esta es una aplicación de Galería de Fotos y Portafolio profesional construida con Next.js 15, TypeScript y Tailwind CSS. La aplicación sigue una arquitectura orientada a componentes con:
 
@@ -22,7 +23,7 @@ Esta es una aplicación de Galería de Fotos y Portafolio profesional construida
 ## 🏗️ Arquitectura del Proyecto
 
 ### Componentes Principales
-# ¿Por qué esta estructura? Para REUTILIZACIÓN y CLARIDAD
+¿Por qué esta estructura? Para reutilización y claridad.
 
 1. **Componentes de Layout** (`src/components/ui/layout/`)
    - `Hero.tsx` - Encabezados de página (título + descripción grande)
@@ -36,7 +37,7 @@ Esta es una aplicación de Galería de Fotos y Portafolio profesional construida
    - `FeatureCard.tsx` - Tarjetas reutilizables para destacar características
 
 ### 🔄 Flujo de Datos
-# Importante: ¿Cómo viaja la información en esta app?
+Importante: ¿cómo viaja la información en esta app?
 
 - **Mock data** vive en `src/lib/` = datos ficticios (no de API real)
 - **State management** = React hooks (useState, useEffect)
@@ -68,7 +69,7 @@ src/
 ## 🎨 Patrones de Componentes
 
 ### 1️⃣ Componentes de Layout
-# REGLA: Siempre estructura las secciones así para CONSISTENCIA
+Regla: siempre estructura las secciones así para mantener consistencia.
 
 ```tsx
 <SectionContainer>
@@ -78,7 +79,7 @@ src/
 ```
 
 ### 2️⃣ Tarjetas de Características
-# REGLA: Para destacar features/acciones, SIEMPRE usa este componente
+Regla: para destacar features o acciones, usa siempre este componente.
 
 ```tsx
 <FeatureCard
@@ -90,7 +91,7 @@ src/
 ```
 
 ### 3️⃣ Mostrar Estadísticas
-# REGLA: Para números/KPIs, usa SIEMPRE StatsGrid
+Regla: para números o KPIs, usa siempre `StatsGrid`.
 
 ```tsx
 <StatsGrid stats={[
@@ -106,7 +107,7 @@ src/
 ## 🎯 Convenciones de Estilos
 
 ### ✅ REGLA 1: Colores con Dark Mode
-# Tailwind + Dark Mode = escribir DOS clases
+Tailwind + Dark Mode = escribir dos clases.
 
 ```tsx
 {/* ✅ BIEN */}
@@ -121,7 +122,7 @@ src/
 ```
 
 ### ✅ REGLA 2: Patrón de Fondo Gradiente
-# Este proyecto usa un gradiente estándar en TODAS las páginas
+Este proyecto usa un gradiente estándar en todas las páginas.
 
 ```tsx
 {/* ✅ BIEN */}
@@ -131,7 +132,7 @@ src/
 ```
 
 ### ✅ REGLA 3: Espaciado Consistente
-# SIEMPRE usa estas clases
+Usa siempre estas clases.
 
 ```tsx
 <div className="container mx-auto px-4">
@@ -153,7 +154,7 @@ npm run dev  # Inicia servidor con Turbopack
 ## ✨ Mejores Prácticas
 
 ### 1️⃣ TypeScript (Tipado Fuerte)
-# REGLA: Cada componente DEBE tener interface clara
+Regla: cada componente debe tener una interfaz clara.
 
 ```tsx
 {/* ✅ BIEN: interface explícita */}
@@ -170,7 +171,7 @@ export function FeatureCard({ icon: Icon, title, description, iconColor }: Featu
 ```
 
 ### 2️⃣ Diseño de Componentes
-# REGLA: Un componente = Una responsabilidad (SRP)
+Regla: un componente = una responsabilidad (SRP).
 
 ```tsx
 {/* ✅ BIEN: componente solo MUESTRA */}
@@ -180,7 +181,7 @@ export function FeatureCard({ icon, title, description, iconColor }: FeatureCard
 ```
 
 ### 3️⃣ State Management
-# REGLA: Mantén state CERCA de donde se usa
+Regla: mantén el state cerca de donde se usa.
 
 ```tsx
 {/* ✅ BIEN */}
@@ -197,7 +198,7 @@ export default function GalleryPage() {
 ```
 
 ### 4️⃣ Estilos (CSS/Tailwind)
-# REGLA: Tailwind classes, no CSS custom innecesario
+Regla: usa clases de Tailwind, no CSS custom innecesario.
 
 ```tsx
 {/* ✅ BIEN: Tailwind puro */}
@@ -212,7 +213,7 @@ export default function GalleryPage() {
 ## ⚠️ Antipatrones (Lo que NUNCA hacer)
 
 ### ❌ Componentes que Hacen Demasiado
-# Lógica de fetch, estado, filtrado Y presentación todo en un mismo componente = pesadilla
+Lógica de fetch, estado, filtrado y presentación todo en un mismo componente = pesadilla.
 
 ```tsx
 {/* ❌ MAL */}
@@ -231,7 +232,7 @@ export default function GalleryPage() {
 ```
 
 ### ❌ Props Drilling
-# Pasar props a través de 5 niveles de componentes que no los usan
+Pasar props a través de 5 niveles de componentes que no los usan.
 
 ```tsx
 {/* ❌ MAL: Page → Section → Container → FilterPanel */}
@@ -242,6 +243,6 @@ export default function GalleryPage() {
 ```
 
 
-# Siempre respondeme como experto en esta tecnología, no asuma nada. Si tienes dudas, haz preguntas para aclarar el contexto antes de responder. Siempre responde en español.
+Siempre respóndeme como experto en esta tecnología y no asumas nada. Si tienes dudas, haz preguntas para aclarar el contexto antes de responder. Siempre responde en español.
 
-# La generación de commits igual siempre debe de ser en español y descriptiva.
+La generación de commits debe ser siempre en español y descriptiva.
