@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import { Search, Filter, Grid, List, ChevronDown, X } from "lucide-react";
 import { GalleryGrid } from "@/components/gallery/GalleryGrid";
-import { Hero, SectionContainer, SectionTitle } from "@/components/ui";
+import { Hero, SectionContainer, SectionTitle, ScrollToTop } from "@/components/ui";
 import { AVAILABLE_TAGS } from "@/lib/mock-tag-data";
 
 export default function GalleryPage() {
@@ -192,6 +192,8 @@ export default function GalleryPage() {
           searchQuery={searchQuery}
         />
       </SectionContainer>
+
+      <ScrollToTop />
     </div>
   );
 }
