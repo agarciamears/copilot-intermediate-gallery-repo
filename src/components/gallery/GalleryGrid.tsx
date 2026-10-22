@@ -91,7 +91,7 @@ export function GalleryGrid({
               
               {/* Overlay */}
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300">
-                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="photo-overlay-actions absolute inset-0 flex items-center justify-center">
                   <button
                     onClick={() => setSelectedPhoto(photo)}
                     className="btn-secondary"
@@ -102,7 +102,7 @@ export function GalleryGrid({
               </div>
 
               {/* Action Buttons */}
-              <div className="absolute top-3 right-3 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <div className="photo-overlay-actions absolute top-3 right-3 flex gap-2">
                 <button
                   onClick={() => toggleLike(photo.id)}
                   className={`p-2 rounded-full backdrop-blur-sm transition-colors ${

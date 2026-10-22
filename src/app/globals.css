@@ -456,3 +456,22 @@ body {
     background-color: #1e293b;
   }
 }
+
+/* Controles superpuestos de cada foto.
+   Se revelan al pasar el cursor o al enfocar con teclado, y permanecen
+   visibles en dispositivos tactiles, donde no existe el estado hover. */
+.photo-overlay-actions {
+  opacity: 0;
+  transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.group:hover .photo-overlay-actions,
+.photo-overlay-actions:focus-within {
+  opacity: 1;
+}
+
+@media (hover: none) {
+  .photo-overlay-actions {
+    opacity: 1;
+  }
+}
